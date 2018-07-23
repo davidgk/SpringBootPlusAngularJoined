@@ -28,4 +28,8 @@ public class Persona {
     public Integer getAge(){
         return this.age;
     }
+
+    public boolean isSuccessCreated(){
+        return this.successCreated;
+    }
 }

@@ -1,11 +1,7 @@
-package com.example.example_greetings.hello;
+package com.example.example_greetings.controllers;
 
 import com.example.example_greetings.model.Persona;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class GreetingController {

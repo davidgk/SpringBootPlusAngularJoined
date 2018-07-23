@@ -27,8 +27,9 @@ export class GreetingComponent implements OnInit {
 
     sendGreeting() {
       this.greetingService.makeGreeting(this.greetingForm.value.name)
-          .subscribe(value => {
-              alert(this.greetingForm.value.name);
+          .subscribe((value: any  )=> {
+              alert(value.content);
+              this.myGreeting = value.content;
           }, error => {
               alert(error)
         });

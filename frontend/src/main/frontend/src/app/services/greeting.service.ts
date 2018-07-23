@@ -11,10 +11,7 @@ export class GreetingService {
     constructor(private httpClient: HttpClient) {}
 
     makeGreeting(name:string): Observable<string> {
-        if (name){
-            return this.httpClient.post<any>(this.url, {name: name});
-        } else {
-            return this.httpClient.get<any>(this.url);
-        }
+        const withName=`${this.url}?name=${name}`
+        return this.httpClient.get<any>((name)?withName:this.url);
     }
 }

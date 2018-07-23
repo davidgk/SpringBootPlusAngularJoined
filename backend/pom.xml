@@ -5,6 +5,7 @@
 	<artifactId>backend</artifactId>
 	<name>backend</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 
 	<parent>
 		<groupId>davidgk.pruebas.example_greetings</groupId>

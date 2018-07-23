@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {GreetingService} from "../../services/greeting.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Persona} from "../model/persona";
+
 
 @Component({
   selector: 'greeting',
@@ -17,7 +19,9 @@ export class GreetingComponent implements OnInit {
         formBuilder: FormBuilder,
     ) {
         this.greetingForm = formBuilder.group({
-            name: ['', [Validators.required]]
+            name: ['', [Validators.required]],
+            age: ['', [Validators.required]],
+
         });
     }
 
@@ -26,14 +30,21 @@ export class GreetingComponent implements OnInit {
     }
 
     sendGreeting() {
-      this.greetingService.makeGreeting(this.greetingForm.value.name)
+          this.action()
           .subscribe((value: any  )=> {
-              alert(value.content);
-              this.myGreeting = value.content;
-          }, error => {
-              alert(error)
+             const persona = Persona.createFromJson(value);
+              this.myGreeting = persona.name + "-" + persona.age
+              alert(persona.saidHi());
+          }, (error:Error) => {
+              alert(error.message);
         });
     }
 
 
+    private action() {
+        if(!this.greetingForm.value.name){
+            return this.greetingService.getGreeting()
+        }
+        return this.greetingService.postGreeting(new Persona(this.greetingForm.value.name, this.greetingForm.value.age))
+    }
 }

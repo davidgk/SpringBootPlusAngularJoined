@@ -2,9 +2,7 @@
 
 ##Specifications:
 
-Based on this post:
-https://blog.jdriven.com/2016/12/angular2-spring-boot-getting-started/#comment-290737
-
+Based on this post: https://blog.jdriven.com/2016/12/angular2-spring-boot-getting-started/#comment-290737
 
 Create an spring boot app with angularX with run together under localhost:8080
 
@@ -12,9 +10,6 @@ Also can be debugged externally ( allowing cors) running the FE app with localho
 
 ##For running as it's:
 
-```
 mvn clean install
 cd backend
 mvn spring-boot:run.
-```
-

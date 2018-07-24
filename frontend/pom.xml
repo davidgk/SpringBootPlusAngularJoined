@@ -59,7 +59,7 @@
 		<resources>
 			<resource>
 				<directory>target/frontend</directory>
-				<targetPath>static</targetPath>
+				<targetPath>../../../backend/src/main/resources/static</targetPath>
 			</resource>
 		</resources>
 	</build>
